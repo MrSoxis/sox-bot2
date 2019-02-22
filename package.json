@@ -1,0 +1,16 @@
+{
+  "name": "mybot",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "snekfetch": "^4.0.4",
+    "superagent": "^4.1.0"
+  }
+}
