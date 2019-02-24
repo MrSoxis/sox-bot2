@@ -32,7 +32,7 @@ module.exports.run=async(bot,message,args)=>{
                         .addField("Nom :"+ hameau.name, "Tag : [" + hameau.tag + "]")
                         .addField("Role", hameau.role)
                         .addField("Top : "+hameau.currentRank, "Points : "+hameau.points)
-                        .setThumbnail("https://www.loups-garous-en-ligne.com"+hameau.picture)
+                        .setThumbnail("https://www.loups-garous-en-ligne.com/stuff/facebook/carte2.png")
                         .addField("Nombre de membres", hameau.membersCount);
                 }
 
