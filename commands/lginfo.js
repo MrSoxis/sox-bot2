@@ -20,6 +20,7 @@ module.exports.run=async(bot,message,args)=>{
             let embed = new Discord.RichEmbed()
                 .setDescription('Profil LGEL')
                 .setColor('#B40404')
+                .setThumbnail("https://www.loups-garous-en-ligne.com/stuff/facebook/carte2.png")
                 .addField('Pseudo : ', args[0])
                 .addField("Titre : "+user.title,"Signature : "+signature.replace(/&#39;/g, '\''))
                 .addField("Sexe ",sx)
@@ -31,8 +32,7 @@ module.exports.run=async(bot,message,args)=>{
                         .setImage("https://www.loups-garous-en-ligne.com"+hameau.picture)
                         .addField("Nom :"+ hameau.name, "Tag : [" + hameau.tag + "]")
                         .addField("Role", hameau.role)
-                        .addField("Top : "+hameau.currentRank, "Points : "+hameau.points)
-                        .setThumbnail("https://www.loups-garous-en-ligne.com/stuff/facebook/carte2.png")
+                        .addField("Top : "+hameau.currentRank, "Points : "+hameau.points)                        
                         .addField("Nombre de membres", hameau.membersCount);
                 }
 
