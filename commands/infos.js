@@ -12,7 +12,8 @@ module.exports.run=async(bot,message,args)=>{
         .addField(`$?infos`,"Informations du bot")
         .addField(`?serveur`,'Informations sur le serveur')
         .addField("?select + @User","Selectionne un utilisateur et retourne ses infos")
-        .addField("?lg + pseudo lgel","Retourne des informations sur un joueur lgel");
+        .addField("?lg + pseudo lgel","Retourne des informations sur un joueur lgel")
+        .affField("?lginfo + pseudo lgel","Retourne les informations complètes d'un joueur");
 
 
     return message.channel.send(embed);
