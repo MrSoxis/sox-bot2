@@ -10,8 +10,8 @@ module.exports.run=async(bot,message,args)=>{
         }
         else{
             var prem ="";
-            if(user.premium==="true") prem="Prenium";
-            else prem = "Non prenium";
+            if(user.isPremium) prem="Premium";
+            else prem = "Non premium";
             var sx = "";
             if(user.gender==="male") sx = "Homme";
             else sx = "Femme";
