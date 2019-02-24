@@ -33,7 +33,7 @@ module.exports.run=async(bot,message,args)=>{
                         .addField("Top : "+hameau.currentRank, "Points : "+hameau.points)
                         .setThumbnail("https://www.loups-garous-en-ligne.com"+hameau.picture)
                         .addField("Nombre de membres", hameau.membersCount);
-                    message.channel.send("Bannière",{files"https://www.loups-garous-en-ligne.com"+hameau.picture});
+                    message.channel.send("Bannière",{file"https://www.loups-garous-en-ligne.com"+hameau.picture});
                 }
 
 
