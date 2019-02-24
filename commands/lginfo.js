@@ -28,12 +28,12 @@ module.exports.run=async(bot,message,args)=>{
                 if(user.hamlet) {
                     var hameau = user.hamlet;
                     embed.addField("Hameau ", "--------")
+                        .setImage("https://www.loups-garous-en-ligne.com"+hameau.picture)
                         .addField("Nom :"+ hameau.name, "Tag : [" + hameau.tag + "]")
                         .addField("Role", hameau.role)
                         .addField("Top : "+hameau.currentRank, "Points : "+hameau.points)
                         .setThumbnail("https://www.loups-garous-en-ligne.com"+hameau.picture)
                         .addField("Nombre de membres", hameau.membersCount);
-                    message.channel.send({embed:{image:{url:"https://www.loups-garous-en-ligne.com"+hameau.picture]}}});
                 }
 
 
