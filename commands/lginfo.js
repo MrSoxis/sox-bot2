@@ -27,7 +27,7 @@ module.exports.run=async(bot,message,args)=>{
                 .addField("Statut ",prem);
                 if(user.hamlet) {
                     var hameau = user.hamlet;
-                    embed.addField("Hameau ", "https://www.loups-garous-en-ligne.com"+hameau.picture)
+                    embed.addField("Hameau ", "--------")
                         .addField("Nom :"+ hameau.name, "Tag : [" + hameau.tag + "]")
                         .addField("Role", hameau.role)
                         .addField("Top : "+hameau.currentRank, "Points : "+hameau.points)
