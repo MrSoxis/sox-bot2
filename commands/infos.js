@@ -1,7 +1,6 @@
 const Discord=require('discord.js');
 
 module.exports.run=async(bot,message,args)=>{
-    message.channel.send("Test");
     let botIcon = bot.user.displayAvatarURL;
     let embed = new Discord.RichEmbed()
         .setDescription('Informations du bot')
@@ -14,7 +13,7 @@ module.exports.run=async(bot,message,args)=>{
         .addField("?serveur",'Informations sur le serveur')
         .addField("?select + @User","Selectionne un utilisateur et retourne ses infos")
         .addField("?lg + pseudo lgel","Retourne des informations sur un joueur lgel")
-        .affField("?lginfo + pseudo lgel","Retourne les informations complètes d'un joueur");
+        .addField("?lginfo + pseudo lgel","Retourne les informations complètes d'un joueur");
 
 
     return message.channel.send(embed);
