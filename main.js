@@ -19,7 +19,7 @@ fs.readdir('./commands/',(err,files)=>{
 bot.on('ready',async()=>{
     console.log("On est là");
     bot.user.setActivity("Soulever ta soeur");
-    bot.channels("551357009128194050").send("Bot en ligne !");
+    bot.channels.get("551357009128194050").send("Bot en ligne !");
 });
 
 
@@ -32,7 +32,7 @@ bot.on('message',async message=>{
     let args = messageArray.slice(1);
     let commandFile = bot.commands.get(command.slice(prefix.length));
     if(commandFile){
-        bot.channels("551357009128194050").send("Commande lancée par :"+message.author.username);
+        bot.channels.get("551357009128194050").send("Commande: "+command+" | lancée par :"+message.author.username);
         commandFile.run(bot,message,args);        
     }
 });
