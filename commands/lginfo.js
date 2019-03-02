@@ -39,8 +39,8 @@ module.exports.run=async(bot,message,args)=>{
                         .addField("Top : "+hameau.currentRank, "Points : "+hameau.points)                        
                         .addField("Nombre de membres", hameau.membersCount);
                 }
-            if(user.roles[0].id){
-                embed.addField("Role",user.roles[0].name);
+            if(user.roles.id){
+                embed.addField("Role",user.roles.name);
             }
 
 
