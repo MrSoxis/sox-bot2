@@ -14,9 +14,10 @@ module.exports.run=async(bot,message,args)=>{
         .addField("?select + @User","Selectionne un utilisateur et retourne ses infos")
         .addField("?lg + pseudo lgel","Retourne des informations sur un joueur lgel")
         .addField("?lginfo + pseudo lgel","Retourne les informations complètes d'un joueur");
-
-
-    return message.channel.send(embed);
+    var user = message.author;
+    user.createDM().then(channel=>{
+        return channel.send(embed);
+    }).catch(console.error)
 };
 module.exports.help={
     name:"infos"
