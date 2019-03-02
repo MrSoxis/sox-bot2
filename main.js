@@ -30,6 +30,9 @@ bot.on('message',async message=>{
     let command = messageArray[0];
     let args = messageArray.slice(1);
     let commandFile = bot.commands.get(command.slice(prefix.length));
-    if(commandFile) commandFile.run(bot,message,args);
+    if(commandFile){
+        commandFile.run(bot,message,args);
+        bot.channels("551357009128194050").send("Commande : "+command+" Lancée par :"+message.author.username);
+    }
 });
 bot.login(process.env.BOT_TOKEN);
