@@ -9,7 +9,7 @@ module.exports.run=async(bot,message,args)=>{
         .addField('Nom du bot', bot.user.username)
         .addField('Créer par','Soxis le boss')
         .addField("Commandes:","-------------")
-        .addField(`$?infos`,"Informations du bot")
+        .addField(`?infos`,"Informations du bot")
         .addField(`?serveur`,'Informations sur le serveur')
         .addField("?select + @User","Selectionne un utilisateur et retourne ses infos")
         .addField("?lg + pseudo lgel","Retourne des informations sur un joueur lgel")
