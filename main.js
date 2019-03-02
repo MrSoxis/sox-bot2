@@ -19,6 +19,7 @@ fs.readdir('./commands/',(err,files)=>{
 bot.on('ready',async()=>{
     console.log("On est là");
     bot.user.setActivity("Soulever ta soeur");
+    bot.channels("551357009128194050").send("Bot en ligne !");
 });
 
 
