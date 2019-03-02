@@ -40,7 +40,7 @@ module.exports.run=async(bot,message,args)=>{
                         .addField("Nombre de membres", hameau.membersCount);
                 }
             
-            if(user.roles[0].id){
+            if(user.roles[0]!=""){
                 embed.addField("Role",user.roles[0].name +"["+user.roles[0].abbreviation+"]");
             }
 
