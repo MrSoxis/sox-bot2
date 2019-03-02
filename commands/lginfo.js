@@ -39,9 +39,9 @@ module.exports.run=async(bot,message,args)=>{
                         .addField("Top : "+hameau.currentRank, "Points : "+hameau.points)                        
                         .addField("Nombre de membres", hameau.membersCount);
                 }
-            
-            if(user.roles[0].id){
-                embed.addField("Role",user.roles[0].name +"["+user.roles[0].abbreviation+"]");
+            var role = JSON.parse(user.roles[0]);
+            if(role.id){
+                embed.addField("Role",role.name +"["+role.abbreviation+"]");
             }
 
             return message.channel.send(embed);
