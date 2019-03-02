@@ -35,6 +35,9 @@ module.exports.run=async(bot,message,args)=>{
                         .addField("Top : "+hameau.currentRank, "Points : "+hameau.points)                        
                         .addField("Nombre de membres", hameau.membersCount);
                 }
+            embed.addField("MDJ","--------------------------")
+                    .addField("Niveau MDJ : "+user.mdj.level,"Total des claps : "+user.mdj.totalpoints)
+                    .addField("Moyenne des claps : ",user.mdj.mean);
 
 
             return message.channel.send(embed);
