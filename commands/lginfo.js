@@ -26,19 +26,23 @@ module.exports.run=async(bot,message,args)=>{
                 .addField("Sexe ",sx)
                 .addField('Points : ',user.points)
                 .addField("Statut ",prem);
-            
+
             embed.addField("MDJ","--------------------------")
-                    .addField("Niveau MDJ : "+user.mdj.level,"Total des claps : "+user.mdj.totalpoints)
-                    .addField("Moyenne des claps : ",user.mdj.mean);
-                if(user.hamlet) {
-                    var hameau = user.hamlet;
-                    embed.addField("Hameau ", "---------------------------------------")
-                        .setImage("https://www.loups-garous-en-ligne.com"+hameau.picture)
-                        .addField("Nom :"+ hameau.name, "Tag : [" + hameau.tag + "]")
-                        .addField("Role", hameau.role)
-                        .addField("Top : "+hameau.currentRank, "Points : "+hameau.points)                        
-                        .addField("Nombre de membres", hameau.membersCount);
-                }
+                .addField("Niveau MDJ : "+user.mdj.level,"Total des claps : "+user.mdj.totalpoints)
+                .addField("Moyenne des claps : ",user.mdj.mean);
+            if(user.hamlet) {
+                var hameau = user.hamlet;
+                embed.addField("Hameau ", "---------------------------------------")
+                    .setImage("https://www.loups-garous-en-ligne.com"+hameau.picture)
+                    .addField("Nom :"+ hameau.name, "Tag : [" + hameau.tag + "]")
+                    .addField("Role", hameau.role)
+                    .addField("Top : "+hameau.currentRank, "Points : "+hameau.points)
+                    .addField("Nombre de membres", hameau.membersCount);
+            }
+            if(user.roles && user.roles.length){
+                embed.addField("Role",user.roles[0].name +"["+user.roles[0].abbreviation+"]");
+            }
+            return message.channel.send(embed);
         }
     });
 
