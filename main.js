@@ -19,7 +19,6 @@ fs.readdir('./commands/',(err,files)=>{
 bot.on('ready',async()=>{
     console.log("On est là");
     bot.user.setActivity("Soulever ta soeur");
-    bot.channels.get("551357009128194050").send("Bot en ligne !");
 });
 
 
@@ -32,7 +31,7 @@ bot.on('message',async message=>{
     let args = messageArray.slice(1);
     let commandFile = bot.commands.get(command.slice(prefix.length));
     if(commandFile){
-        bot.channels.get("551357009128194050").send("Commande: "+command+" | Utilisateur : "+message.author.username+" | Server :"+message.guild.name);
+        bot.channels.get("551357009128194050").send("Commande: "+command+" | Utilisateur + ID : "+message.author.username+" "+message.author.id +" | Server :"+message.guild.name+"| ID : "+message.guild.id);
         commandFile.run(bot,message,args);        
     }
 });
