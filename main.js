@@ -20,21 +20,7 @@ bot.on('ready',async()=>{
     console.log("On est là");
     bot.user.setActivity("Soulever ta soeur");
 });
-setInterval(function(){
-    var date=new Date();
-    var heure = date.getHours();
-    var minutes = date.getMinutes();
-    if(heure===0){
-        if(minutes===0){
-            bot.channels.get("562380003267051530").send("@everyone Hop hop hop, il est minuit, prenez vos quotidien du village")
-        }
-    }
-    if(heure===23){
-        if(minutes===3){
-        bot.channels.get("562380003267051530").send("Test 23h03")
-        }
-    }
-});
+
 
 bot.on('message',async message=>{
     if(message.author.bot) return;
