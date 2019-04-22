@@ -28,7 +28,7 @@ bot.on('message',async message=>{
     let prefix=process.env.PREFIX;
     if(message.author.id=="365431431251492865"){
         if(message.content.indexOf("https://tenor.com/view/")==0){
-            message.delete();
+            message.delete(1000);
         }
     }
     let messageArray=message.content.split(" ");
