@@ -27,8 +27,9 @@ bot.on('message',async message=>{
     if (message.channel.type === 'dm')return;
     let prefix=process.env.PREFIX;
     if(message.author.id=="365431431251492865"){
-        message.channel.send(message.content.indexOf("https://tenor.com/view/"));
-        
+        if(message.content.indexOf("https://tenor.com/view/")==0){
+            bot.delete_message(message);
+        }
     }
     let messageArray=message.content.split(" ");
     let command = messageArray[0];
