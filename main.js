@@ -26,7 +26,7 @@ bot.on('message',async message=>{
     if(message.author.bot) return;
     if (message.channel.type === 'dm')return;
     let prefix=process.env.PREFIX;
-    if((message.author.id=="413801175444357131")|| (message.author.id=="301780093578248193")||(message.author.id=="450411701683093515")){
+    if((message.author.id=="413801175444357131")|| (message.author.id=="301780093578248193")||(message.author.id=="450411701683093515")|| (message.author.id=="426422683081769000")){
         if(message.content.includes("https://tenor.com/view/")){
             message.delete();
             message.channel.send("Désolé, mais t'es privé de Gif");
