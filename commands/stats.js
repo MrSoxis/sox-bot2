@@ -1,0 +1,35 @@
+const Discord=require('discord.js');
+const snekfetch = require("snekfetch");
+module.exports.run=async(bot,message,args)=>{
+    var api="https://lgelinfos.fr/api/stats/"+args[0];
+    snekfetch.get(api).then(r=>{
+        var data=r.body;
+        if(data.error){
+            message.channel.send("Error : "+data.error);
+        }
+        else {
+            let commentary;
+            if(data.points<50){
+                commentary="Peu mieux faire"
+            }
+            else if(data.points<200){
+                commentary="Bonne perf"
+            }
+            else {
+                commentary="Là t'as abusé"
+            }
+            let embed = new Discord.RichEmbed()
+                .setDescription('Points journalier de ' + data.realName)
+                .setColor('#B40404')
+                .setThumbnail("https://www.loups-garous-en-ligne.com/stuff/facebook/carte2.png")
+                .addField("Points : "+data.points+" En "+data.parties+ " parties",commentary)
+            ;
+            return message.channel.send(embed);
+        }
+
+    });
+
+};
+module.exports.help={
+    name:"stats"
+};
