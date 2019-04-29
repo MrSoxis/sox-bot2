@@ -29,10 +29,12 @@ bot.on('message',async message=>{
     let messageArray=message.content.split(" ");
     let command = messageArray[0];
     let args = messageArray.slice(1);
-    let commandFile = bot.commands.get(command.slice(prefix.length));
-    if(commandFile){
-        bot.channels.get("551357009128194050").send("Commande: "+command+" | Utilisateur + ID : "+message.author.username+" "+message.author.id +" | Server :"+message.guild.name+"| ID : "+message.guild.id);
-        commandFile.run(bot,message,args);        
-    }
+    if(command.slice(0,1)==prefix){
+        let commandFile = bot.commands.get(command.slice(prefix.length));
+        if(commandFile){
+            bot.channels.get("551357009128194050").send("Commande: "+command+" | Utilisateur + ID : "+message.author.username+" "+message.author.id +" | Server :"+message.guild.name+"| ID : "+message.guild.id);
+            commandFile.run(bot,message,args);        
+        }
+    };
 });
 bot.login(process.env.BOT_TOKEN);
