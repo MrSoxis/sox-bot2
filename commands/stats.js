@@ -10,7 +10,7 @@ module.exports.run=async(bot,message,args)=>{
         else {
             let commentary;
             if(data.points<50){
-                commentary="Peu mieux faire"
+                commentary="Peut mieux faire"
             }
             else if(data.points<200){
                 commentary="Bonne perf"
@@ -18,11 +18,16 @@ module.exports.run=async(bot,message,args)=>{
             else {
                 commentary="Là t'as abusé"
             }
+            let msgRatio="";
+            if(data.parties>0){
+                let ratio=data.points/data.parties;
+                msgRatio="Ratio : "+ratio;
+            }
             let embed = new Discord.RichEmbed()
                 .setDescription('Points journalier de ' + data.realName)
                 .setColor('#B40404')
                 .setThumbnail("https://www.loups-garous-en-ligne.com/stuff/facebook/carte2.png")
-                .addField(data.points+" points en "+data.parties+ " parties",commentary)
+                .addField(data.points+" points en "+data.parties+ " parties "+msgRatio,commentary)
             ;
             return message.channel.send(embed);
         }
