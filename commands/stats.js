@@ -20,7 +20,7 @@ module.exports.run=async(bot,message,args)=>{
             }
             let msgRatio="";
             if(data.parties>0){
-                let ratio=data.points/data.parties;
+                let ratio=Math.floor(((data.points/data.parties)*10)/10);
                 msgRatio="Ratio : "+ratio;
             }
             let embed = new Discord.RichEmbed()
