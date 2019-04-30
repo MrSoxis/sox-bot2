@@ -27,7 +27,7 @@ module.exports.run=async(bot,message,args)=>{
                 .setDescription('Points journalier de ' + data.realName)
                 .setColor('#B40404')
                 .setThumbnail("https://www.loups-garous-en-ligne.com/stuff/facebook/carte2.png")
-                .addField(data.points+" points en "+data.parties+ " parties "+"\n\t"+msgRatio,commentary)
+                .addField(data.points+" points en "+data.parties+ " parties "+"\n\t\t\t"+msgRatio,commentary)
             ;
             return message.channel.send(embed);
         }
