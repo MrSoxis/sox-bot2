@@ -2,6 +2,8 @@ const Discord=require('discord.js');
 const fs = require('fs');
 const bot = new Discord.Client({disableEveryone : true});
 
+const banGuild=[];
+const banUser=[];
 bot.commands = new Discord.Collection();
 
 fs.readdir('./commands/',(err,files)=>{
@@ -30,6 +32,8 @@ bot.on('message',async message=>{
     let command = messageArray[0];
     let args = messageArray.slice(1);
     if(command.slice(0,1)==prefix){
+        if(banGuild.includes(message.guild.id)){return message.channel.send("Serveur banni biatch, bouge de là !");};
+        if(banUser.includes(message.author.id)){return message.channel.send("Ptdr t ban "+message.author);};
         let commandFile = bot.commands.get(command.slice(prefix.length));
         if(commandFile){
             bot.channels.get("551357009128194050").send("Commande: "+command+" | Utilisateur + ID : "+message.author.username+" "+message.author.id +" | Server :"+message.guild.name+"| ID : "+message.guild.id);
