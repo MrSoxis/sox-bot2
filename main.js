@@ -18,7 +18,7 @@ fs.readdir('./commands/',(err,files)=>{
 });
 bot.on('ready',async()=>{
     console.log("On est là");
-    bot.user.setActivity("Soulever ta soeur");
+    bot.user.setActivity("Soulever ta soeur | ?help si t'es perdu mon khey");
 });
 
 
