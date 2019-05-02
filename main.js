@@ -3,7 +3,7 @@ const fs = require('fs');
 const bot = new Discord.Client({disableEveryone : true});
 
 const banGuild=[];
-const banUser=[];
+const banUser=["365431431251492865"];
 bot.commands = new Discord.Collection();
 
 fs.readdir('./commands/',(err,files)=>{
