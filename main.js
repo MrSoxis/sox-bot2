@@ -2,7 +2,7 @@ const Discord=require('discord.js');
 const fs = require('fs');
 const bot = new Discord.Client({disableEveryone : true});
 
-const banGuild=["548459117581303809"];
+const banGuild=[];
 const banUser=[];
 bot.commands = new Discord.Collection();
 
