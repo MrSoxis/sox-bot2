@@ -24,8 +24,8 @@ module.exports.run=async(bot,message,args)=>{
             else {
                 commentary="Là t'as vraiment try hard"
             }
-            if(data.realName="Soxisse"){
-                commentary = ":crown Quelles stats de boss ! :crown:";    
+            if(data.realName=="Soxisse"){
+                commentary = ":crown: Quelles stats de boss ! :crown:";    
             }
             let msgRatio="";
             if(data.parties>0){
