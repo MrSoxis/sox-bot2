@@ -33,7 +33,7 @@ bot.on('message',async message=>{
     let args = messageArray.slice(1);
     if(command.slice(0,1)==prefix){
         if(banGuild.includes(message.guild.id)){return message.channel.send("Serveur banni noraj, n'hésitez pas à kick le bot ");};
-        if(banUser.includes(message.author.id)){ message.author.createDM().then(channel=>{
+        if(banUser.includes(message.author.id)){ return message.author.createDM().then(channel=>{
             return channel.send("Mdr t ban");
             }).catch(console.error);};
         let commandFile = bot.commands.get(command.slice(prefix.length));
