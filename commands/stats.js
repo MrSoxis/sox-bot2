@@ -18,6 +18,9 @@ module.exports.run=async(bot,message,args)=>{
             else {
                 commentary="Là t'as abusé"
             }
+            if(data.realName="Soxisse"){
+                commentary = ":crown Quelles stats de boss ! :crown:";    
+            }
             let msgRatio="";
             if(data.parties>0){
                 let ratio=Math.floor((data.points/data.parties)*10)/10;
