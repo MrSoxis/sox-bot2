@@ -12,11 +12,17 @@ module.exports.run=async(bot,message,args)=>{
             if(data.points<50){
                 commentary="Peut mieux faire"
             }
+            else if(data.points<100){
+                commentary="Passable";
+            }
+            else if(data.points<150){
+                commentary="Là tu commences à m'plaire"; 
+            }
             else if(data.points<200){
-                commentary="Bonne perf"
+                commentary="Bonne perf !"
             }
             else {
-                commentary="Là t'as abusé"
+                commentary="Là t'as vraiment try hard"
             }
             if(data.realName="Soxisse"){
                 commentary = ":crown Quelles stats de boss ! :crown:";    
