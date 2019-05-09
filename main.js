@@ -1,7 +1,7 @@
 const Discord=require('discord.js');
 const fs = require('fs');
 const bot = new Discord.Client({disableEveryone : true});
-
+var maintenance=false;
 const banGuild=[];
 const banUser=[];
 bot.commands = new Discord.Collection();
@@ -32,6 +32,11 @@ bot.on('message',async message=>{
     let command = messageArray[0];
     let args = messageArray.slice(1);
     if(command.slice(0,1)==prefix){
+        if(maintenance){
+          if (message.guild.id != "548459117581303809"){
+            return message.channel.send("Bot en maintenance, oups :$");
+          }
+        };
         if(banGuild.includes(message.guild.id)){return message.channel.send("Serveur banni noraj, n'hésitez pas à kick le bot ");};
         if(banUser.includes(message.author.id)){ message.react('🖕'); return message.author.createDM().then(channel=>{
             return channel.send("Mdr t ban");
