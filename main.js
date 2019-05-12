@@ -20,7 +20,12 @@ fs.readdir('./commands/',(err,files)=>{
 });
 bot.on('ready',async()=>{
     console.log("On est là");
+    if(maintenance){
+        bot.user.setActivity("En maintenance");
+    };
+    else{
     bot.user.setActivity("Soulever ta soeur | ?help si t'es perdu mon khey");
+    };
 });
 
 
