@@ -2,7 +2,7 @@ const Discord=require('discord.js');
 const fs = require('fs');
 const bot = new Discord.Client({disableEveryone : true});
 const maintenance=1;
-const banGuild=[];
+const banGuild=["548459117581303809":"Cheh"];
 const banUser=["398967090461147137"];
 bot.commands = new Discord.Collection();
 
@@ -42,7 +42,7 @@ bot.on('message',async message=>{
             return message.channel.send("Bot en maintenance, oups :$");
           }
         };
-        if(banGuild.includes(message.guild.id)){return message.channel.send("Serveur banni noraj, n'hésitez pas à kick le bot ");};
+        if(banGuild.includes(message.guild.id)){return message.channel.send("Bot indisponible sur ce serveur, raison : "+banGuild.message.guild.id);};
         if(banUser.includes(message.author.id)){ message.react('🖕'); return message.author.createDM().then(channel=>{
             return channel.send("Mdr t ban");
             }).catch(console.error);};
