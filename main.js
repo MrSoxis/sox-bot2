@@ -1,7 +1,7 @@
 const Discord=require('discord.js');
 const fs = require('fs');
 const bot = new Discord.Client({disableEveryone : true});
-var maintenance=true;
+var maintenance=1;
 const banGuild=[];
 const banUser=["398967090461147137"];
 bot.commands = new Discord.Collection();
@@ -20,7 +20,7 @@ fs.readdir('./commands/',(err,files)=>{
 });
 bot.on('ready',async()=>{
     console.log("On est là");
-    if(maintenance){
+    if(maintenance==1){
         bot.user.setActivity("En maintenance");
     };
     else{
@@ -37,7 +37,7 @@ bot.on('message',async message=>{
     let command = messageArray[0];
     let args = messageArray.slice(1);
     if(command.slice(0,1)==prefix){
-        if(maintenance){
+        if(maintenance==1){
           if (message.guild.id != "548459117581303809"){
             return message.channel.send("Bot en maintenance, oups :$");
           }
