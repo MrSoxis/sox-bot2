@@ -2,8 +2,8 @@ const Discord=require('discord.js');
 const fs = require('fs');
 const bot = new Discord.Client({disableEveryone : true});
 const maintenance=1;
-const banGuild=["548459117581303809"];
-const banUser=["398967090461147137"];
+const banGuild=[];
+const banUser=[];
 bot.commands = new Discord.Collection();
 
 fs.readdir('./commands/',(err,files)=>{
@@ -43,7 +43,7 @@ bot.on('message',async message=>{
             return message.channel.send("Bot en maintenance, oups :$");
           }
         };
-        if(banGuild.includes(message.guild.id)){return message.channel.send("Bot indisponible sur ce serveur cheh à vous");};
+        if(banGuild.includes(message.guild.id)){return message.channel.send("Bot indisponible sur ce serveur, cheh à vous");};
         if(banUser.includes(message.author.id)){ message.react('🖕'); return message.author.createDM().then(channel=>{
             return channel.send("Mdr t ban");
             }).catch(console.error);};
