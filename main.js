@@ -36,6 +36,7 @@ bot.on('message',async message=>{
     let messageArray=message.content.split(" ");
     let command = messageArray[0];
     let args = messageArray.slice(1);
+    if(message.content==="?ping"){return message.channel.send("Pong :ping_pong: ");};
     if(command.slice(0,1)==prefix){
         if(maintenance==1){
           if (message.guild.id != "548459117581303809"){
