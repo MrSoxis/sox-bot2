@@ -42,7 +42,7 @@ bot.on('message',async message=>{
             return message.channel.send("Bot en maintenance, oups :$");
           }
         };
-        if(banGuild.includes(message.guild.id)){return message.channel.send("Bot indisponible sur ce serveur, raison : "+banGuild.message.guild.id);};
+        if(banGuild.includes(message.guild.id)){return message.channel.send("Bot indisponible sur ce serveur, raison : "+banGuild[message.guild.id)];};
         if(banUser.includes(message.author.id)){ message.react('🖕'); return message.author.createDM().then(channel=>{
             return channel.send("Mdr t ban");
             }).catch(console.error);};
