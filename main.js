@@ -36,14 +36,14 @@ bot.on('message',async message=>{
     let messageArray=message.content.split(" ");
     let command = messageArray[0];
     let args = messageArray.slice(1);
-    if(message.content==="?ping"){return message.channel.send("Pong :ping_pong: ");};
+    if(message.content==="?ping")return message.channel.send("Pong :ping_pong: ");
     if(command.slice(0,1)==prefix){
         if(maintenance==1){
           if (message.guild.id != "548459117581303809"){
             return message.channel.send("Bot en maintenance, oups :$");
           }
         };
-        if(banGuild.includes(message.guild.id)){return message.channel.send("Bot indisponible sur ce serveur, raison : "+banGuild[message.guild.id)];};
+        if(banGuild.includes(message.guild.id)){return message.channel.send("Bot indisponible sur ce serveur, raison : "+banGuild[message.guild.id]);};
         if(banUser.includes(message.author.id)){ message.react('🖕'); return message.author.createDM().then(channel=>{
             return channel.send("Mdr t ban");
             }).catch(console.error);};
