@@ -5,6 +5,7 @@ module.exports.run=async(bot,message,args)=>{
   var api="https://aws.random.cat/meow";
     snekfetch.get(api).then(r=>{
         var data=r.body;
+        message.channel.send("cc");
         return message.channel.send(data.file);
     };
 };
