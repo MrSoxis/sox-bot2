@@ -7,9 +7,9 @@ module.exports.run=async(bot,message,args)=>{
         var data=r.body;
         message.channel.send("some text", {
     file: data.file
-});
-    };
+    });
+    });
 };
 module.exports.help={
-    name:"cat";
+    name:"cat"
 };
