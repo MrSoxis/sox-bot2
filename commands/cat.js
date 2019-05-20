@@ -6,7 +6,7 @@ module.exports.run=async(bot,message,args)=>{
     snekfetch.get(api).then(r=>{
         var data=r.body;
         message.channel.send("some text", {
-    file: data.file;
+    file: data.file
 });
     };
 };
