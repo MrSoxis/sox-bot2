@@ -28,7 +28,7 @@ module.exports.run=async(bot,message,args)=>{
                 commentary = ":crown: Quelles stats de boss ! :crown:";    
             }
             else if(data.realName=="Kralj"){            
-               commentary="Aller farm encore, bon toutou :dog:";
+               commentary=":medal: Direction le top :medal:";
             }
             let msgRatio="";
             if(data.parties>0){
