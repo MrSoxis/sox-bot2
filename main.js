@@ -30,7 +30,7 @@ bot.on('ready',async()=>{
 
 
 bot.on('message',async message=>{
-    if(message.author.bot) return;
+    if(message.author.bot) return message.channel.send("Arrête de me draguer en pv");
     if (message.channel.type === 'dm')return;
     let prefix=process.env.PREFIX;
     let messageArray=message.content.split(" ");
