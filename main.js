@@ -31,7 +31,7 @@ bot.on('ready',async()=>{
 
 bot.on('message',async message=>{
     if(message.author.bot) return;
-    if (message.channel.type === 'dm')return;
+    if (message.channel.type === 'dm')return message.channel.send("Me parle pas, on s'connait pas.");
     let prefix=process.env.PREFIX;
     let messageArray=message.content.split(" ");
     let command = messageArray[0];
